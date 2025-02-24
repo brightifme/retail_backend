@@ -9,7 +9,7 @@ const customerRoute = require('./routes/customer/index')
 const staffRoute = require('./routes/staff/index') // Add this line
 const staffLoginRoute = require('./controllers/loginStaff/loginStaff')
 
-const sequelize = require('/home/landylea/retail-backend/database/sequelize')
+const sequelize = require('/database/sequelize')
 require('dotenv').config();
 
 
