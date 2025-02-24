@@ -54,14 +54,13 @@ app.use((err, req, res, next) => {
 // Endpoints
 
 // Start Server
-sequelize.authenticate()
-  .then(() => {
-    console.log('Database connected successfully');
-  })
-  .catch((error) => {
-    console.error('Error connecting to database', error);
+const port = 5000;
+sequelize.authenticate().then(() => {
+  app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
   });
-
-module.exports = app; // Export the app instead of listening on a port
+}).catch((error) => {
+  console.error('error connecting to database', error)
+})
 
 //npx nodemon index.js
